@@ -13,7 +13,8 @@
             employee.Add(new Employee(1, "Raju", 5000052, "Male"));
             employee.Add(new Employee(1, "Snehu", 199999, "Female"));
             Console.WriteLine("Employee pay role program running using multi threading ");
-            Console.WriteLine("Hint 1.Display data without thread 2.DisplayData with thread 3. Add data without threa 4.Add data with Thread");
+            Console.WriteLine("Hint 1.Display data without thread 2.DisplayData with thread 3. Add data without threa 4.Add data with Thread" +
+                "\n 5.Synchronous Add Method Thread");
             int number = Convert.ToInt32(Console.ReadLine());
 
             switch (number)
@@ -46,6 +47,12 @@
                     employeeOperation.SingleAddEmployee_WithThread(employee);
                     DateTime endtimeThreadADD = DateTime.Now;
                     Console.WriteLine("Duration with threading is "+(endtimeThreadADD-starttimeThreadADD));
+                    break;
+                case 5:
+                    //// Synchronous Add Method Thread
+                    Console.WriteLine(" Processing data Wait......");
+                    int countNumData = employeeOperation.AddEmployee_Synchronous(employee);
+                    Console.WriteLine(" total data in the list of employee "+countNumData);
                     break;
             }
         }

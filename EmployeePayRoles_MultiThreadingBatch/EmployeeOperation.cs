@@ -97,5 +97,21 @@ namespace EmployeePayRoles_MultiThreadingBatch
                 Console.WriteLine("Gender added"+Gendr);
             });
         }
+        /// <summary>
+        /// uc4 Synchronous Add Method Thread
+        /// </summary>
+        /// <param name="employeeList"></param>
+        //synchronous = task performed one at a time and when is complet the followig is unblocked.wait for the move next one.
+        public int AddEmployee_Synchronous(List<Employee> employeeList)
+        {
+            int countNum = 0;
+            foreach (var emp in employeeList)
+            {
+                countNum = employeeList.Count();
+                // Make program Wait for Look Busy For 5 sec
+                Thread.Sleep(5000);
+            }
+            return countNum;
+        }
     }
 }
