@@ -17,9 +17,15 @@ namespace EmployeePayRoles_MultiThreadingTest
 
             ////Uc1 Without Thread test
             DateTime starttime = DateTime.Now;
-            employeeOperation.addEmployeeToPayRole();
+            employeeOperation.addEmployeeToPayRole(employee);
             DateTime endtime = DateTime.Now;
             Console.WriteLine("Duration without threading is "+(endtime-starttime));
+
+            ////Uc 2 with thread test case
+            DateTime starttimeThread = DateTime.Now;
+            employeeOperation.addEmployeeToPayRole_WithThread(employee);
+            DateTime endtimeThread = DateTime.Now;
+            Console.WriteLine("Duration with threading is "+(endtimeThread-starttimeThread));
         }
     }
 }

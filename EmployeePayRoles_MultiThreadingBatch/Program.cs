@@ -15,10 +15,14 @@
 
             ////Uc1 Without Thread
             DateTime starttime = DateTime.Now;
-            employeeOperation.addEmployeeToPayRole();
+            employeeOperation.addEmployeeToPayRole(employee);
             DateTime endtime = DateTime.Now;
             Console.WriteLine("Duration without threading is "+(endtime-starttime));
-            Console.ReadLine();
+            ////Uc 2 with thread
+            DateTime starttimeThread = DateTime.Now;
+            employeeOperation.addEmployeeToPayRole_WithThread(employee);
+            DateTime endtimeThread = DateTime.Now;
+            Console.WriteLine("Duration with threading is "+(endtimeThread-starttimeThread));
         }
     }
 }
