@@ -8,13 +8,13 @@
             EmployeeOperation employeeOperation = new EmployeeOperation();
             List<Employee> employee = new List<Employee>();
             employee.Add(new Employee(1, "Snehal", 40000000, "Female"));
-            employee.Add(new Employee(1, "Mayur", 42535352, "Male"));
-            employee.Add(new Employee(1, "Vaibhav", 30535352, "Male"));
-            employee.Add(new Employee(1, "Raju", 5000052, "Male"));
-            employee.Add(new Employee(1, "Snehu", 199999, "Female"));
+            employee.Add(new Employee(2, "Mayur", 42535352, "Male"));
+            employee.Add(new Employee(3, "Vaibhav", 30535352, "Male"));
+            employee.Add(new Employee(4, "Raju", 5000052, "Male"));
+            employee.Add(new Employee(5, "Snehu", 199999, "Female"));
             Console.WriteLine("Employee pay role program running using multi threading ");
             Console.WriteLine("Hint 1.Display data without thread 2.DisplayData with thread 3. Add data without threa 4.Add data with Thread" +
-                "\n 5.Synchronous Add Method Thread");
+                "\n 5.Synchronous Add Method Thread \n 6.Update Method Thrad");
             int number = Convert.ToInt32(Console.ReadLine());
 
             switch (number)
@@ -53,6 +53,12 @@
                     Console.WriteLine(" Processing data Wait......");
                     int countNumData = employeeOperation.AddEmployee_Synchronous(employee);
                     Console.WriteLine(" total data in the list of employee "+countNumData);
+                    break;
+                case 6:
+                    DateTime starttimeThreadUpdate = DateTime.Now;
+                    employeeOperation.UpdateEmployee_WithThread(employee);
+                    DateTime endtimeThreadUpdate = DateTime.Now;
+                    Console.WriteLine("Duration with threading is "+(endtimeThreadUpdate-starttimeThreadUpdate));
                     break;
             }
         }

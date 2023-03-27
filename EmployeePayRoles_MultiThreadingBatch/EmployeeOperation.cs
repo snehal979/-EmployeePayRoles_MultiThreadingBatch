@@ -113,5 +113,27 @@ namespace EmployeePayRoles_MultiThreadingBatch
             }
             return countNum;
         }
+        /// <summary>
+        /// UC6 Update data for single Employee Without Threading
+        /// </summary>
+        /// <param name="employeeList"></param>
+        public void UpdateEmployee_WithThread(List<Employee> employeeList)
+        {
+            Console.WriteLine("Enter the name Want Update");
+            Console.WriteLine("Enter the Id");
+            int editId = Convert.ToInt32(Console.ReadLine());
+            
+            //check the name is present or not
+            foreach (var data in employeeList)
+            {
+                if (editId.Equals(data.Id))
+                {
+                    Console.WriteLine("Salary being added"+data.Salary);
+                    Console.WriteLine("Enter the Salary");
+                    data.Salary = Convert.ToInt64(Console.ReadLine());
+                    Console.WriteLine("Salary added"+data.Salary);
+                }
+            }
+        }
     }
 }
